@@ -1,0 +1,29 @@
+{
+  "name": "gestion_materiels",
+  "private": true,
+  "version": "1.0.0",
+  "description": "## 🚀 Javascript full-stack 🚀",
+  "scripts": {
+    "build": "lerna run --parallel build",
+    "up": "docker-compose -f docker-compose.dev.yml up -d",
+    "postup": "npm run dev",
+    "dev": "lerna run --parallel dev",
+    "stop": "docker-compose -f docker-compose.dev.yml stop",
+    "down": "docker-compose -f docker-compose.dev.yml down"
+  },
+  "keywords": [
+    "MERNG",
+    "Mongo",
+    "Node",
+    "Express",
+    "React",
+    "GraphQl",
+    "Apollo-server-express",
+    "Apollo-client"
+  ],
+  "author": "Fandresena RAKOTONIRINA",
+  "license": "MIT",
+  "devDependencies": {
+    "lerna": "^4.0.0"
+  }
+}

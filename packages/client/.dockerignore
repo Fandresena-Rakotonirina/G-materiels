@@ -1,0 +1,17 @@
+node_modules
+
+.dockerignore
+
+Dockerfile
+
+README.md
+
+screenshot.png
+
+*.log
+
+dist
+
+public
+src
+package*.json
