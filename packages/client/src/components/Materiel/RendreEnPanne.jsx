@@ -75,7 +75,7 @@ function RendreEnPanne({ materiel }) {
                 />
               </Grid>
               <Grid item xs={12} sm={12}>
-                <Button variant="outlined">OK</Button>
+                <Button variant="outlined">OdsgK</Button>
               </Grid>
             </Grid>
           </FForm>

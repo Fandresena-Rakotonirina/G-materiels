@@ -70,7 +70,7 @@ function CardHome({ detail , navigateToTab}) {
                userId: value.userId
             }
          },
-         refetchQueries: [{ query: LOAD_DETAILS }]
+         refetchQueries: [{ query: LOAD_DETAILS }, { query: LOAD_USERS }]
       })
       helpers.resetForm()
 
@@ -87,7 +87,7 @@ function CardHome({ detail , navigateToTab}) {
                status: 'en panne',
             }
          },
-         refetchQueries: [{ query: LOAD_DETAILS }]
+         refetchQueries: [{ query: LOAD_DETAILS },{ query: LOAD_TECHNICIENS }]
       })
       helpers.resetForm()
 

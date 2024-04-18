@@ -1,3 +1,5 @@
+
+import React from 'react'
 import { IconButton } from '@material-ui/core'
 import { PersonAddDisabled, Delete } from '@material-ui/icons'
 import Button from '@material-ui/core/Button';
@@ -9,7 +11,6 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import { useMutation } from '@apollo/client'
 import { DELETE_MATERIEL } from '../../GraphQL/Mutations'
 import { LOAD_DETAILS, LOAD_MATERIELS } from '../../GraphQL/Queries'
-import React from 'react'
 import Backdrop from '../Backdrop'
 
 function RendreLibre(props) {
@@ -62,7 +63,7 @@ function RendreLibre(props) {
             aria-labelledby="alert-dialog-title"
             aria-describedby="alert-dialog-description"
          ><br /><br />
-            <DialogTitle id="alert-dialog-title">{"Voulez-vous rendre libre ce materiel ? "}</DialogTitle>
+            <DialogTitle id="alert-dialog-title">{"Voulez-vous rendre libre ce materiel  ? "}</DialogTitle>
             {/* <DialogContent>
                <DialogContentText id="alert-dialog-description">
                   Vous voulez bien rendre libre ce materiel ? 

@@ -14,14 +14,14 @@ const { checkUser, requireAuth } = require('./middlewares/auth.middleware')
 const userRoutes = require('./routes/user.routes')
 import schema from './schemas'
 
-// initialise a new express app
+// initialiser un nouveau express app
 const app = express()
 
 // middlewares
 app.use(express.json())
 app.use(cookieParser())
 
-// use cors middleware
+// utiliser cors middleware
 app.use(cors({ origin: ORIGIN, credentials: true }))
 
 // auths middlewares

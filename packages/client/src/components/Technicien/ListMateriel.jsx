@@ -23,7 +23,7 @@ function ListMateriel({ technicien = [], setIsOpen }) {
         {technicien?.maintenances.map((materiel, index) => (
           <ListItem key={materiel.serie} style={{ position: 'relative' }}>
             <RendreEnMarche
-              materiel={materiel}
+              materiel={materiel.id}
               style={{ position: 'absolute', right: 0 }}
             />
             <ListItemText

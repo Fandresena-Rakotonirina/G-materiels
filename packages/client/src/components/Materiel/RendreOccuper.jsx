@@ -9,7 +9,7 @@ import {
    RENDRE_OCCUPER_INITIAL_FORM_STATE,
    RENDRE_OCCUPER_FORM_VALIDATION
 } from './Validation'
-import { RENDRE_OCCUPER_MATERIEL } from '../../GraphQL/Mutations'
+import { ADD_MATERIEL } from '../../GraphQL/Mutations'
 import { useMutation, useQuery } from '@apollo/client'
 import { createOptionsUser } from '../../utils'
 import { LOAD_MATERIELS, LOAD_USERS } from '../../GraphQL/Queries'
@@ -23,15 +23,18 @@ function RendreOccuper({ materiel }) {
 
    const { loading: gettingUser, data: userData } = useQuery(LOAD_USERS)
 
-   const [updateMateriel, { loading, error }] = useMutation(
-      RENDRE_OCCUPER_MATERIEL
+   const [addMateriel, { loading, error }] = useMutation(
+      ADD_MATERIEL
    )
 
    const handleSubmit = (value, helpers) => {
-      updateMateriel({
+      addMateriel({
          variables: {
-            id: materiel.id,
-            updateMaterielFields: { userId: value.userId }
+            addMateriel: {
+               nom: value.nom,
+               userId: value.userId,
+               status: 'en marche',
+            }
          },
          refetchQueries: [{ query: LOAD_MATERIELS }, { query: LOAD_USERS }]
       })
@@ -50,7 +53,7 @@ function RendreOccuper({ materiel }) {
             <PersonAdd />
          </IconButton>
          <Dialog isOpen={isOpen} setIsOpen={setIsOpen}>
-            <Typography variant="h6">Donner {materiel.serie} à :</Typography>
+            <Typography variant="h6">Donnsvdgdsger {materiel.serie} à :</Typography>
             <Formik
                initialValues={{ ...RENDRE_OCCUPER_INITIAL_FORM_STATE }}
                validationSchema={RENDRE_OCCUPER_FORM_VALIDATION}
@@ -72,7 +75,7 @@ function RendreOccuper({ materiel }) {
                         />
                      </Grid>
                      <Grid item xs={12} sm={12}>
-                        <Button variant="outlined">OK</Button>
+                        <Button variant="outlined">OHK</Button>
                      </Grid>
                   </Grid>
                </FForm>

@@ -46,11 +46,11 @@ function Card({ materiel,navigateToTab }) {
 						{materiel.technicien === null ? (
 							<RendreEnPanne materiel={materiel} />
 						) : (
-							<RendreEnMarche materiel={materiel} />
+							<RendreEnMarche id={materiel.id} />
 						)}
 					</>
 				)}
-				{materiel.user ? null : <Delete id={materiel.id} />}
+				{/* {materiel.user ? null : <Delete id={materiel.id} />} */}
 			</CardActions>
 		</MCard>
 	)

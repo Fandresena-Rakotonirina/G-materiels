@@ -65,7 +65,7 @@ function Materiel() {
                   ) : (
                      <>
                         <MaterielListHome details={data2.details} navigateToTab={navigateToTab} />
-                        <Add />
+                        {/* <Add /> */}
                      </>
                   )}
                </div>
