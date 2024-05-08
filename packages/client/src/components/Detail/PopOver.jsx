@@ -78,7 +78,8 @@ function PopOver({ detail }) {
           initialFormState={{
             id: detail.id,
             type: detail.type,
-            marque: detail.marque
+            marque: detail.marque,
+            total: detail.total
           }}
           setIsOpen={setIsOpen}
         />

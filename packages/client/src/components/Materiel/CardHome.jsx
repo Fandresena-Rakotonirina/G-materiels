@@ -18,7 +18,7 @@ import { INITIAL_FORM_STATE1, FORM_VALIDATION1 ,RENDRE_EN_PANNE_INITIAL_FORM_STA
 import { RENDRE_OCCUPER_MATERIEL, ADD_MATERIEL } from '../../GraphQL/Mutations'
 import { useMutation, useQuery } from '@apollo/client'
 import { createOptionsUser, createOptionsTechnicien } from '../../utils'
-import { LOAD_MATERIELS, LOAD_USERS, LOAD_DETAILS, LOAD_TECHNICIENS } from '../../GraphQL/Queries'
+import { LOAD_MATERIELS, LOAD_USERS, LOAD_DETAILS, LOAD_TECHNICIENS,COMPTER_MATERIEL_PAR_STATUS } from '../../GraphQL/Queries'
 
 function CardHome({ detail , navigateToTab}) {
 
@@ -37,12 +37,15 @@ function CardHome({ detail , navigateToTab}) {
       setIsOpenEnPanne(false);
    }
 
-   // Naviguer vers l'onglet du tas
+   // Naviguer vers un TabPanel
    const handleNavigation = (index) => {
       navigateToTab(index);
    };
    const { loading: gettingUser, data: userData } = useQuery(LOAD_USERS)
    const { loading: gettingTechnicien, data: technicienData } = useQuery(LOAD_TECHNICIENS)
+   const {loading: comptermateriel, data: compterData } = useQuery(COMPTER_MATERIEL_PAR_STATUS, {
+      variables: detail.id 
+   });
 
    const [addMateriel, { loading: loadingMateriel, error }] = useMutation(
       ADD_MATERIEL,
@@ -97,13 +100,13 @@ function CardHome({ detail , navigateToTab}) {
 
    const optionsUser = createOptionsUser(userData?.users)
    const optionsTechnicien = createOptionsTechnicien(technicienData?.techniciens)
-
+   //const { materielOccuper, materielEnPanne } = compterData
 
    /* if (loadinDetail || loadingMateriel) {
       return <Backdrop loading={true} />
    } */
    if (loadingMateriel) return <Backdrop loading={gettingUser} />
-   if (error) return <p>An error occured error</p>
+   if (error) return <p>An error occured  {error} </p>
 
    return (
       <>
@@ -114,8 +117,14 @@ function CardHome({ detail , navigateToTab}) {
                   Marque: {detail.marque}
                </Typography>
                <Typography variant="caption" component="p">
-                  Nombre: 6
+                  Libre: 
                </Typography>
+               <Typography variant="caption" component="p">
+                  Occuper: 
+               </Typography>
+               <Typography variant="caption" component="p">
+                  En panne: 
+               </Typography>  
             </CardContent>
             <CardActions>
                <IconButton
@@ -143,7 +152,7 @@ function CardHome({ detail , navigateToTab}) {
             >
                <FForm autoComplete="off">
                   <Grid container spacing={2}>
-                     <Grid item xs={12}>
+                     <Grid item xs={6}>
                         <Select
                            required
                            label="utilisateur"
@@ -156,9 +165,12 @@ function CardHome({ detail , navigateToTab}) {
                            autoFocus
                         />
                      </Grid>
-                     <Grid item xs={12} sm={12}>
+                     <Grid item xs={6} sm={6}>
                         <TextField required label="Serie du materiel" name="serie" autoFocus />
                      </Grid>
+                     {/* <Grid item xs={6} sm={6}>
+                        <TextField type="Number" required label="Nombre" name="nombre" autoFocus />
+                     </Grid> */}
                      <Grid item xs={12} sm={12}>
                         <Button variant="outlined">OK</Button>
                      </Grid>
@@ -177,7 +189,7 @@ function CardHome({ detail , navigateToTab}) {
             >
                <FForm autoComplete="off">
                   <Grid container spacing={2}>
-                     <Grid item xs={12}>
+                     <Grid item xs={6}>
                         <Select
                            required
                            label="technicien"
@@ -190,7 +202,7 @@ function CardHome({ detail , navigateToTab}) {
                            autoFocus
                         />
                      </Grid>
-                     <Grid item xs={12} sm={12}>
+                     <Grid item xs={6} sm={6}>
                         <TextField required label="Serie du materiel" name="serie" autoFocus />
                      </Grid>
                      <Grid item xs={12} sm={12}>

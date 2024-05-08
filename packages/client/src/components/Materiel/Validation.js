@@ -14,7 +14,7 @@ export const FORM_VALIDATION = Yup.object().shape({
 export const FORM_VALIDATION1 = Yup.object().shape({
   serie: Yup.string()
     .min(3, 'Trois (03) caractères minimum')
-    .required('Le serie du materiel est vide'),
+    .required('Le serie du materiel est vide '),
   userId: Yup.string()
   .required('L"utilisateur est vide')
 })

@@ -10,7 +10,7 @@ function Card({ detail }) {
           {detail.marque}
         </Typography>
         <Typography variant="caption" component="p">
-          Nombre de materiel: {detail.materiels?.length}
+          Nombre de materiel : {detail.total}
         </Typography>
       </CardContent>
       <PopOver detail={detail} />

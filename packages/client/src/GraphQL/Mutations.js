@@ -17,6 +17,7 @@ export const ADD_USER = gql`
           id
           type
           marque
+          total
         }
       }
     }
@@ -38,6 +39,7 @@ export const UPDATE_USER = gql`
         detail {
           type
           marque
+          total
         }
       }
     }
@@ -58,6 +60,7 @@ export const ADD_MATERIEL = gql`
       detail {
         type
         marque
+        total
       }
       user {
         id
@@ -86,6 +89,7 @@ export const UPDATE_MATERIEL = gql`
       detail {
         type
         marque
+        total
       }
       user {
         nom
@@ -107,6 +111,7 @@ export const RENDRE_LIBRE_MATERIEL = gql`
       detail {
         type
         marque
+        total
       }
       user {
         nom
@@ -128,6 +133,7 @@ export const RENDRE_OCCUPER_MATERIEL = gql`
       detail {
         type
         marque
+        total
       }
       user {
         nom
@@ -144,6 +150,7 @@ export const ADD_DETAIL = gql`
       id
       type
       marque
+      total
       materiels {
         id
         serie
@@ -151,6 +158,7 @@ export const ADD_DETAIL = gql`
           id
           type
           marque
+          total
         }
         user {
           id
@@ -175,6 +183,7 @@ export const UPDATE_DETAIL = gql`
       id
       type
       marque
+      total
       materiels {
         id
         serie
@@ -182,7 +191,6 @@ export const UPDATE_DETAIL = gql`
     }
   }
 `
-
 export const ADD_TECHNICIEN = gql`
   mutation addTechnicien($addTechnicienFields: AddTechnicienInput!) {
     addTechnicien(addTechnicienFields: $addTechnicienFields) {
@@ -198,11 +206,13 @@ export const ADD_TECHNICIEN = gql`
           id
           type
           marque
+          total
         }
       }
     }
   }
 `
+
 export const DELETE_TECHNICIEN = gql`
   mutation deleteTechnicien($id: ID!) {
     deleteTechnicien(id: $id)
@@ -226,6 +236,7 @@ export const UPDATE_TECHNICIEN = gql`
           id
           type
           marque
+          total
         }
       }
     }

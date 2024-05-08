@@ -120,9 +120,9 @@ export default function Login({ setIsLoggin }) {
                      helperText={passwordHelper}
                   />
 
-                  <Link onClick={() => setIsLoggin(false)} color="textPrimary">
+                  {/* <Link onClick={() => setIsLoggin(false)} color="textPrimary">
                      Je n'ai pas un compte. Créer un compte?
-                  </Link>
+                  </Link> */}
 
                   <Button
                      type="submit"

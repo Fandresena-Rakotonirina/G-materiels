@@ -30,7 +30,7 @@ function Form({ initialFormState, setIsOpen }) {
          updateDetail({
             variables: {
                id: initialFormState.id,
-               updateMaterielFields: { type: value.type, marque: value.marque }
+               updateMaterielFields: { type: value.type, marque: value.marque, total: value.total}
             },
             refetchQueries: [{ query: LOAD_DETAILS }]
          })
@@ -40,7 +40,7 @@ function Form({ initialFormState, setIsOpen }) {
       } else {
          addDetail({
             variables: {
-               addDetailFields: { type: value.type, marque: value.marque }
+               addDetailFields: { type: value.type, marque: value.marque, total: value.total}
             }
          })
          if (loadingADD_DETAIL) return <Backdrop loading={loadingADD_DETAIL} />
@@ -73,10 +73,13 @@ function Form({ initialFormState, setIsOpen }) {
             <FForm autoComplete="off">
                <Grid container spacing={2}>
                   <Grid item xs={12} sm={6}>
-                     <TextField required label="type" name="type" autoFocus />
+                     <TextField required label="Type" name="type" autoFocus />
                   </Grid>
                   <Grid item xs={12} sm={6}>
-                     <TextField required label="marque" name="marque" />
+                     <TextField required label="Marque" name="marque" />
+                  </Grid>
+                  <Grid item xs={12} sm={6}>
+                     <TextField required type="number" label="Nombre" name="total" />
                   </Grid>
                   <Grid item xs={12} sm={12}>
                      <Button variant="outlined">

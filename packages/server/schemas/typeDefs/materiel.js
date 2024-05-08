@@ -10,6 +10,7 @@ export default gql`
     id: ID!
     type: String!
     marque: String!
+    total: Int
     materiels: [Materiel!]
   }
 
@@ -25,11 +26,13 @@ export default gql`
   input AddDetailInput {
     type: String!
     marque: String!
+    total: Int
   }
 
   input UpdateDetailInput {
     type: String
     marque: String
+    total: Int
   }
 
   input AddMaterielInput {

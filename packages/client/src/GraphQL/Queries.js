@@ -17,6 +17,7 @@ export const LOAD_USERS = gql`
           id
           type
           marque
+          total
         }
       }
     }
@@ -32,6 +33,7 @@ export const LOAD_MATERIELS = gql`
       detail {
         type
         marque
+        total
       }
       user {
         id
@@ -54,6 +56,7 @@ export const LOAD_DETAILS = gql`
       id
       type
       marque
+      total
       materiels {
         id
         serie
@@ -61,6 +64,7 @@ export const LOAD_DETAILS = gql`
           id
           type
           marque
+          total
         }
         user {
           id
@@ -80,14 +84,28 @@ export const LOAD_TECHNICIENS = gql`
       prenom
       contact
       maintenances {
-        id
-        serie
-        detail {
-          id
-          type
-          marque
-        }
+         id
+         serie
+         detail {
+            id
+            type
+            marque
+         }
       }
     }
   }
 `
+export const COMPTER_MATERIEL_PAR_STATUS = gql`
+   query CountOccupiedAndBrokenMaterielsByDetail($detailId: ID!) {
+      materielOccuper: materiels(
+         where: { status: "en marche", userId: { _is_null: false }, detailId: $detailId }
+      ) {
+         totalCount
+      }
+      materielEnPanne: materiels(
+         where: { status: "en panne", technicienId: { _is_null: false }, detailId: $detailId }
+      ) {
+         totalCount
+      }
+   }
+`;

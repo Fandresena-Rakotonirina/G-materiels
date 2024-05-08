@@ -90,12 +90,12 @@ function Form({ initialFormState, setIsOpen }) {
                 label="fonction"
                 name="fonction"
                 options={[
-                  { id: 'Chef secteur', value: 'Chef secteur' },
-                  { id: 'Commercial', value: 'Commercial' },
-                  { id: 'Monteur', value: 'Monteur' },
+                  { id: 'AS', value: 'AS' },
+                  { id: 'CP', value: 'CP' },
+                  { id: 'OS', value: 'OS' },
                   { id: 'Agent de conduit', value: 'Agent de conduit' },
-                  { id: "Chef d'usine", value: "Chef d'usine" },
-                  { id: 'Releveur', value: 'Releveur' },
+                  { id: "Chef de service", value: "Chef de service" },
+                  { id: 'SD', value: 'SD' },
                   { id: 'Comptable', value: 'Comptable' }
                 ]}
               />
