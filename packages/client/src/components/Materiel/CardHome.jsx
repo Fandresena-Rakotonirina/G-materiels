@@ -156,7 +156,7 @@ function CardHome({ detail , navigateToTab}) {
                         <Select
                            required
                            label="utilisateur"
-                           name="userId"
+                           
                            options={
                               gettingUser
                                  ? [{ id: null, value: 'loading...' }]

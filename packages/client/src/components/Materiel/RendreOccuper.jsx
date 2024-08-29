@@ -53,7 +53,7 @@ function RendreOccuper({ materiel }) {
             <PersonAdd />
          </IconButton>
          <Dialog isOpen={isOpen} setIsOpen={setIsOpen}>
-            <Typography variant="h6">Donnsvdgdsger {materiel.serie} à :</Typography>
+            <Typography variant="h6"> {materiel.serie} à :</Typography>
             <Formik
                initialValues={{ ...RENDRE_OCCUPER_INITIAL_FORM_STATE }}
                validationSchema={RENDRE_OCCUPER_FORM_VALIDATION}
@@ -75,7 +75,7 @@ function RendreOccuper({ materiel }) {
                         />
                      </Grid>
                      <Grid item xs={12} sm={12}>
-                        <Button variant="outlined">OHK</Button>
+                        <Button variant="outlined">OK</Button>
                      </Grid>
                   </Grid>
                </FForm>

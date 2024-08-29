@@ -17,6 +17,7 @@ export default gql`
   type Materiel {
     id: ID!
     serie: String!
+    nombre: String
     detail: Detail
     user: User
     technicien: Technicien
@@ -37,6 +38,7 @@ export default gql`
 
   input AddMaterielInput {
     serie: String!
+    nombre: String
     detailId: String!
     userId: String
     technicienId: String
@@ -45,6 +47,7 @@ export default gql`
 
   input UpdateMaterielInput {
     serie: String
+    nombre: String
     detailId: ID
     userId: ID
     technicienId: ID

@@ -7,10 +7,18 @@ const materielSchema = new Schema(
       trim: true,
       required: true
     },
+    nombre: {
+      type: String,
+      trim: true
+    },
     detailId: {
       type: String,
       trim: true,
       required: true
+    },
+    nombre: {
+      type: String,
+      trim: true
     },
     userId: {
       type: String,

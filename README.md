@@ -35,29 +35,6 @@ npm run stop
 npm run down
 ```
 
-## MVP
-
-As a user, I can
-
-- sign up / sign in / sign out
-- crud users / materiels /details /techniciens
-- consulte list of users / materiels / details / technicien
-
-## Next Phase
-
-As a user, I can
-
-- reset pwd
-- receive confirmation emails
-- edit my profile
-- see in realtime other users data's modification
-- customize the theme
-- upload files materiels images
-
-## features
-
-- use redis for stocking our cache
-
 ## Stack
 
 ### Backend
@@ -72,14 +49,6 @@ As a user, I can
 - Apollo Client 3.4.16
 - Material-UI 4.11.4
 
-### DevOps
-
-- nginx
-- Docker + docker-compose
-
----
-
-![Alt text](./screenshot.png 'Screenshot')
 
 💻 Made by RAKOTONIRINA Santatriniaina Fandresena Jean Aime ,.......
 
