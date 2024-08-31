@@ -21,6 +21,9 @@ function Card({ materiel,navigateToTab }) {
 				<Typography variant="caption" component="p">
 					Marque: {materiel.detail.marque}
 				</Typography>
+				<Typography variant="caption" component="p">
+					Nombre: {materiel.nombre}
+				</Typography>
 				{materiel.user && (
 					<Typography variant="caption" component="p">
 						User: {materiel.user.nom} {materiel.user.prenom}

@@ -1,4 +1,4 @@
-import { gql } from '@apollo/client'
+import { gql } from '@apollo/client';
 
 export const LOAD_USERS = gql`
   {
@@ -13,6 +13,7 @@ export const LOAD_USERS = gql`
       materiels {
         id
         serie
+        nombre
         detail {
           id
           type
@@ -22,13 +23,14 @@ export const LOAD_USERS = gql`
       }
     }
   }
-`
+`;
 
 export const LOAD_MATERIELS = gql`
   {
     materiels {
       id
       serie
+      nombre
       status
       detail {
         type
@@ -48,7 +50,7 @@ export const LOAD_MATERIELS = gql`
       }
     }
   }
-`
+`;
 
 export const LOAD_DETAILS = gql`
   {
@@ -60,6 +62,7 @@ export const LOAD_DETAILS = gql`
       materiels {
         id
         serie
+        nombre
         detail {
           id
           type
@@ -71,10 +74,16 @@ export const LOAD_DETAILS = gql`
           nom
           prenom
         }
+        technicien {
+          id
+          nom
+          prenom
+          contact
+        }
       }
     }
   }
-`
+`;
 
 export const LOAD_TECHNICIENS = gql`
   {
@@ -84,17 +93,19 @@ export const LOAD_TECHNICIENS = gql`
       prenom
       contact
       maintenances {
-         id
-         serie
-         detail {
-            id
-            type
-            marque
-         }
+        id
+        serie
+        nombre
+        detail {
+          id
+          type
+          marque
+        }
       }
     }
   }
-`
+`;
+
 export const COMPTER_MATERIEL_PAR_STATUS = gql`
    query CountOccupiedAndBrokenMaterielsByDetail($detailId: ID!) {
       materielOccuper: materiels(

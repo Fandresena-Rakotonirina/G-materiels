@@ -1,7 +1,7 @@
 import * as Yup from 'yup'
 
 // formik validation
-export const INITIAL_FORM_STATE1 = { serie: '' }
+export const INITIAL_FORM_STATE1 = { serie: ' ', nombre: '' }
 export const INITIAL_FORM_STATE = { serie: '', detailId: '' }
 export const FORM_VALIDATION = Yup.object().shape({
   serie: Yup.string()
@@ -15,8 +15,10 @@ export const FORM_VALIDATION1 = Yup.object().shape({
   serie: Yup.string()
     .min(3, 'Trois (03) caractères minimum')
     .required('Le serie du materiel est vide '),
+  nombre: Yup.string()
+    .required('Le nombre du materiel est vide '),
   userId: Yup.string()
-  .required('L"utilisateur est vide')
+    .required('L"utilisateur est vide')
 })
 
 // formik validation

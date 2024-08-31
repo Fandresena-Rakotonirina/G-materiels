@@ -20,7 +20,7 @@ function Navigation() {
                   <Menu />
                </IconButton>
                <Typography variant="h6" component="div" style={{ flexGrow: 1 }}>
-                  G. Materiels
+                  Gestion materiels
                </Typography>
                <Logout />
             </Toolbar>
